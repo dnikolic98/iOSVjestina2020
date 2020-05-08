@@ -25,7 +25,6 @@ class QuizzesService {
                                 let quizzesList = jsonDict["quizzes"] as? [Any] {
                                 let quizzes = quizzesList.compactMap(Quiz.init)
                                 completion(quizzes)
-                                
                             } else {
                                 completion(nil)
                             }

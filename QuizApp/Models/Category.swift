@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-enum Category: String {
+enum Category: String, CaseIterable {
     
-    case sports = "Sports"
-    case science = "Science"
+    case sports = "sports"
+    case science = "science"
     
     var color: UIColor {
         switch self {

@@ -9,7 +9,7 @@
 
 import UIKit
 
-class HomePageController: UIViewController {
+class HomePageViewController: UIViewController {
     @IBOutlet weak var getQuizButton: UIButton!
     @IBOutlet weak var xCircle: UIImageView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -28,7 +28,7 @@ class HomePageController: UIViewController {
                 if let quizzes = quizzes {
                     self.showFunFact(quizzes: quizzes, word: "NBA")
                     self.hideErrorMessage()
-//                    self.showDetailScreen(question: quizzes[0].questions[0])
+//                    self.showDetailScreen(question: quizzes[0].questions[0])
                 } else {
                     self.showErrorMessage()
                     self.hideFunFact()
