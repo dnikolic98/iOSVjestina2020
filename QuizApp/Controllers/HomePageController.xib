@@ -20,6 +20,8 @@
                 <outlet property="GetQuizButton" destination="gN4-b9-jhq" id="1c1-dE-nIk"/>
                 <outlet property="erorInfoLabel" destination="v2g-hp-edG" id="Gy9-YR-8zz"/>
                 <outlet property="errorLabel" destination="kVz-zo-ELk" id="Res-fO-65G"/>
+                <outlet property="funFact" destination="RdT-hH-qGy" id="AI7-ic-NpG"/>
+                <outlet property="funFactDetails" destination="lWU-Fd-dDc" id="HYd-gb-FnT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HLb-5q-6YM"/>
                 <outlet property="xCircle" destination="WZr-Fa-kX7" id="y9w-vl-Vc5"/>
             </connections>
@@ -64,16 +66,33 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💡 Fun Fact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdT-hH-qGy">
+                    <rect key="frame" x="32" y="227" width="127.5" height="33"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="26"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-Fd-dDc" userLabel="factDetails">
+                    <rect key="frame" x="32" y="270" width="350" height="25.5"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="RdT-hH-qGy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="14w-uI-VmN"/>
+                <constraint firstItem="lWU-Fd-dDc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="9OL-2R-4hb"/>
                 <constraint firstItem="WZr-Fa-kX7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9ln-QM-JJ5"/>
                 <constraint firstItem="6ll-36-Ing" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="Hks-Md-asi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gN4-b9-jhq" secondAttribute="trailing" constant="32" id="LTY-yQ-C1o"/>
                 <constraint firstItem="kVz-zo-ELk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NgW-GE-g0M"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lWU-Fd-dDc" secondAttribute="trailing" constant="32" id="QTt-8Q-Y0W"/>
+                <constraint firstItem="RdT-hH-qGy" firstAttribute="top" secondItem="gN4-b9-jhq" secondAttribute="bottom" constant="47" id="RsC-I0-SEa"/>
                 <constraint firstItem="gN4-b9-jhq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Vz4-8X-Age"/>
                 <constraint firstItem="WZr-Fa-kX7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WBP-EM-PEs"/>
                 <constraint firstItem="v2g-hp-edG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YWs-9M-Gpx"/>
+                <constraint firstItem="lWU-Fd-dDc" firstAttribute="top" secondItem="RdT-hH-qGy" secondAttribute="bottom" constant="10" id="Z5z-Fa-eRA"/>
                 <constraint firstItem="gN4-b9-jhq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aN5-nO-6ka"/>
                 <constraint firstItem="v2g-hp-edG" firstAttribute="top" secondItem="kVz-zo-ELk" secondAttribute="bottom" constant="10" id="anb-Ap-jUM"/>
                 <constraint firstItem="kVz-zo-ELk" firstAttribute="top" secondItem="WZr-Fa-kX7" secondAttribute="bottom" constant="10" id="nQE-zj-nFv"/>

@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import UIKit
 
 class Quiz{
     
     let id: Int
     let title: String
     let description: String
-    let category: String
+    let category: Category
     let level: Int
     let imageUrl: String
     let questions: [Question]
@@ -34,7 +33,7 @@ class Quiz{
             self.id = id
             self.title = title
             self.description = description
-            self.category = category
+            self.category = Category(rawValue: category.lowercased())!
             self.level = level
             self.imageUrl = imageUrl
             self.questions = questionsJson.compactMap(Question.init)

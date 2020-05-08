@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="QuizApp" customModuleProvider="target">
+            <connections>
+                <outlet property="questionLabel" destination="rWt-ay-iZK" id="Xoo-ZE-86F"/>
+                <outlet property="view" destination="iN0-l3-epB" id="kpu-pC-gjf"/>
+                <outletCollection property="answerButtons" destination="Fst-GP-hwA" collectionClass="NSMutableArray" id="bGD-du-bqu"/>
+                <outletCollection property="answerButtons" destination="XVU-e5-hTF" collectionClass="NSMutableArray" id="0u2-Np-CVa"/>
+                <outletCollection property="answerButtons" destination="K0b-zr-FR6" collectionClass="NSMutableArray" id="YTX-zr-za8"/>
+                <outletCollection property="answerButtons" destination="nvc-0c-wVf" collectionClass="NSMutableArray" id="aYd-HM-IAl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="407"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="rUv-Nc-haZ">
+                    <rect key="frame" x="24" y="137" width="290" height="226"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fst-GP-hwA">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="46"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.3008080051369863" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                            <inset key="titleEdgeInsets" minX="27" minY="0.0" maxX="27" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-e5-hTF">
+                            <rect key="frame" x="0.0" y="60" width="290" height="46"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.3008080051369863" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                            <inset key="titleEdgeInsets" minX="27" minY="0.0" maxX="27" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0b-zr-FR6">
+                            <rect key="frame" x="0.0" y="120" width="290" height="46"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.3008080051369863" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                            <inset key="titleEdgeInsets" minX="27" minY="0.0" maxX="27" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvc-0c-wVf">
+                            <rect key="frame" x="0.0" y="180" width="290" height="46"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.3008080051369863" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                            <inset key="titleEdgeInsets" minX="27" minY="0.0" maxX="27" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who was the most famous Croatian basketball player in the NBA? " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-ay-iZK">
+                    <rect key="frame" x="24" y="27" width="290" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="290" id="Bqf-UU-7Xc"/>
+                        <constraint firstAttribute="height" constant="80" id="s8m-Qf-fYW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="rUv-Nc-haZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0iX-Um-LOA"/>
+                <constraint firstItem="rWt-ay-iZK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AGS-li-jWb"/>
+                <constraint firstItem="rWt-ay-iZK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="C1C-vT-1zH"/>
+                <constraint firstItem="rWt-ay-iZK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="Dj1-S7-mhx"/>
+                <constraint firstItem="rUv-Nc-haZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="E1e-du-dUc"/>
+                <constraint firstAttribute="trailing" secondItem="rUv-Nc-haZ" secondAttribute="trailing" constant="24" id="QcW-o6-Bbv"/>
+                <constraint firstItem="rUv-Nc-haZ" firstAttribute="top" secondItem="rWt-ay-iZK" secondAttribute="bottom" constant="30" id="tb2-vN-KPZ"/>
+                <constraint firstAttribute="trailing" secondItem="rWt-ay-iZK" secondAttribute="trailing" constant="24" id="w0K-ot-aEQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="56.521739130434788" y="93.415178571428569"/>
+        </view>
+    </objects>
+</document>
