@@ -27,5 +27,6 @@ struct Colors {
     static let purple           = UIColor(red: 99.0/255.0, green: 41.0/255.0, blue: 222.0/255.0, alpha: 1.0)
     static let gold             = UIColor(red: 242.0/255.0, green: 201.0/255.0, blue: 76.0/255.0, alpha: 1.0)
     static let lightBlue        = UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-    static let white_60            = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.6)
+    static let white_60         = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.6)
+    static let white_30         = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.3)
 }

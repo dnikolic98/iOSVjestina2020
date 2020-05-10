@@ -18,6 +18,11 @@
 		5228868A246569DD00861E92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52288689246569DD00861E92 /* LoginViewController.swift */; };
 		5228868C24656A1D00861E92 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5228868B24656A1D00861E92 /* LoginViewController.xib */; };
 		522886922465C68200861E92 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522886912465C68200861E92 /* Authorization.swift */; };
+		522886A22465EC1400861E92 /* QuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522886A12465EC1400861E92 /* QuizTableViewCell.xib */; };
+		522886A72466A5DA00861E92 /* QuizzesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522886A62466A5DA00861E92 /* QuizzesViewModel.swift */; };
+		522886A92466B89500861E92 /* QuizTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522886A82466B89500861E92 /* QuizTableVIewCell.swift */; };
+		522886B12468328500861E92 /* QuizSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522886B02468328500861E92 /* QuizSectionHeaderTableViewCell.swift */; };
+		522886B3246832A900861E92 /* QuizSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */; };
 		524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA34824615C7E00F69467 /* AppDelegate.swift */; };
 		524DA35224615C8100F69467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524DA35124615C8100F69467 /* Assets.xcassets */; };
 		524DA35524615C8100F69467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524DA35324615C8100F69467 /* LaunchScreen.storyboard */; };
@@ -51,6 +56,11 @@
 		52288689246569DD00861E92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5228868B24656A1D00861E92 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		522886912465C68200861E92 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		522886A12465EC1400861E92 /* QuizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizTableViewCell.xib; sourceTree = "<group>"; };
+		522886A62466A5DA00861E92 /* QuizzesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesViewModel.swift; sourceTree = "<group>"; };
+		522886A82466B89500861E92 /* QuizTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableVIewCell.swift; sourceTree = "<group>"; };
+		522886B02468328500861E92 /* QuizSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		524DA34524615C7E00F69467 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DA34824615C7E00F69467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524DA35124615C8100F69467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +105,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		522886962465E18F00861E92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				522886A82466B89500861E92 /* QuizTableVIewCell.swift */,
+				522886A12465EC1400861E92 /* QuizTableViewCell.xib */,
+				522886B02468328500861E92 /* QuizSectionHeaderTableViewCell.swift */,
+				522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		522886A52466A51700861E92 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				522886A62466A5DA00861E92 /* QuizzesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		524DA33C24615C7E00F69467 = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +146,11 @@
 				524DA38724618DB800F69467 /* Supporting files */,
 				522886932465CC7900861E92 /* Utils */,
 				524DA3942463531000F69467 /* Fonts */,
+				522886962465E18F00861E92 /* Cells */,
 				524DA37D24618B9800F69467 /* Services */,
 				524DA37C24618B8600F69467 /* Models */,
 				524DA37E24618BAB00F69467 /* Views */,
+				522886A52466A51700861E92 /* ViewModels */,
 				524DA38024618BC100F69467 /* Controllers */,
 			);
 			path = QuizApp;
@@ -263,9 +294,11 @@
 			files = (
 				524DA3BF2463563900F69467 /* SourceSansPro-Regular.ttf in Resources */,
 				524DA3C92463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				522886A22465EC1400861E92 /* QuizTableViewCell.xib in Resources */,
 				524DA3C22463563900F69467 /* SourceSansPro-SemiBold.ttf in Resources */,
 				524DA3BE2463563900F69467 /* SourceSansPro-BlackItalic.ttf in Resources */,
 				5228868C24656A1D00861E92 /* LoginViewController.xib in Resources */,
+				522886B3246832A900861E92 /* QuizSectionHeaderTableViewCell.xib in Resources */,
 				522886842464A10700861E92 /* QuestionView.xib in Resources */,
 				524DA3C42463563900F69467 /* SourceSansPro-Light.ttf in Resources */,
 				524DA3C32463563900F69467 /* SourceSansPro-ExtraLight.ttf in Resources */,
@@ -288,13 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522886A92466B89500861E92 /* QuizTableVIewCell.swift in Sources */,
 				5228867A24641CD700861E92 /* QuizzesService.swift in Sources */,
+				522886A72466A5DA00861E92 /* QuizzesViewModel.swift in Sources */,
 				522886922465C68200861E92 /* Authorization.swift in Sources */,
 				5228868A246569DD00861E92 /* LoginViewController.swift in Sources */,
 				522886862465628F00861E92 /* Category.swift in Sources */,
 				522886882465679E00861E92 /* QuizImageService.swift in Sources */,
 				5228867E24641E8A00861E92 /* Question.swift in Sources */,
 				524DA38F2462FF0700F69467 /* HomePageViewController.swift in Sources */,
+				522886B12468328500861E92 /* QuizSectionHeaderTableViewCell.swift in Sources */,
 				5228867824641CA700861E92 /* Quiz.swift in Sources */,
 				524DA38D2462ED9B00F69467 /* GradientExtensionUiView.swift in Sources */,
 				524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */,

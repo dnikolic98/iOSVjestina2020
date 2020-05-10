@@ -46,4 +46,16 @@ class QuestionView: UIView {
             button.setTitle(self.question?.answers[index], for: .normal)
         }
     }
+    
+    func deactivateButtons(){
+        for button in self.answerButtons{
+            button.isEnabled = false
+        }
+    }
+    
+    func resetButtons(){
+        for button in self.answerButtons{
+            button.setTitle("", for: .normal)
+        }
+    }
 }

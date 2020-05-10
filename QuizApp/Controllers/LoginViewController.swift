@@ -46,15 +46,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        configureTextField(textField: emailTextField)
-        configureTextField(textField: passwordTextField)
+        setupTextField(textField: emailTextField)
+        setupTextField(textField: passwordTextField)
+        setupLoginButton()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setupLoginButton(){
         loginButton.setTitleColor(Colors.purple, for: .normal)
         loginButton.backgroundColor = Colors.white
         loginButton.layer.cornerRadius = 23
     }
     
-    func configureTextField(textField: UITextField){
+    func setupTextField(textField: UITextField){
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 23
         
@@ -91,5 +97,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height / 10
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }

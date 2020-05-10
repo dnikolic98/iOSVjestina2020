@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class QuizImageService {
-    func fetchFlag(quiz: Quiz, completion: @escaping ((UIImage?) -> Void)){
+    func fetchImage(quiz: QuizCellModel, completion: @escaping ((UIImage?) -> Void)){
         let urlString = quiz.imageUrl
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)

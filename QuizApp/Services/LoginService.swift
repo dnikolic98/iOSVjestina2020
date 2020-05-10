@@ -11,7 +11,7 @@ import Foundation
 class LoginService {
     
     private let loginUrl = "https://iosquiz.herokuapp.com/api/session"
-
+    
     func login(username: String, password: String, completion: @escaping ((AuthToken?) -> Void)) {
         if let url = URL(string: loginUrl) {
             var request = URLRequest(url: url)
@@ -20,7 +20,7 @@ class LoginService {
             
             let parameters = ["username": username, "password": password]
             request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-
+            
             let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     do {

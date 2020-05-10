@@ -14,31 +14,31 @@ class QuizzesService {
     
     func fetchQuizzes(completion: @escaping (([Quiz]?) -> Void)) {
         if let url = URL(string: quizzesUrl) {
-                let request = URLRequest(url: url)
-                
-                let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    if let data = data {
-                        
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            if let jsonDict = json as? [String: Any],
-                                let quizzesList = jsonDict["quizzes"] as? [Any] {
-                                let quizzes = quizzesList.compactMap(Quiz.init)
-                                completion(quizzes)
-                            } else {
-                                completion(nil)
-                            }
-                        } catch {
+            let request = URLRequest(url: url)
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let data = data {
+                    
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: [])
+                        if let jsonDict = json as? [String: Any],
+                            let quizzesList = jsonDict["quizzes"] as? [Any] {
+                            let quizzes = quizzesList.compactMap(Quiz.init)
+                            completion(quizzes)
+                        } else {
                             completion(nil)
                         }
-                        
-                    } else {
+                    } catch {
                         completion(nil)
                     }
+                    
+                } else {
+                    completion(nil)
                 }
-                dataTask.resume()
-            } else {
-                completion(nil)
             }
+            dataTask.resume()
+        } else {
+            completion(nil)
         }
+    }
 }

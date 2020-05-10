@@ -11,8 +11,8 @@ import UIKit
 
 enum Category: String, CaseIterable {
     
-    case sports = "sports"
-    case science = "science"
+    case sports = "Sports"
+    case science = "Science"
     
     var color: UIColor {
         switch self {

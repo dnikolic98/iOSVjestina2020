@@ -33,12 +33,19 @@ class Quiz{
             self.id = id
             self.title = title
             self.description = description
-            self.category = Category(rawValue: category.lowercased())!
+            self.category = Category(rawValue: category.capitalized)!
             self.level = level
             self.imageUrl = imageUrl
             self.questions = questionsJson.compactMap(Question.init)
         } else {
             return nil
         }
+    }
+    
+    func getQuestionPreview() -> Question?{
+        if self.questions.count == 0{
+            return nil
+        }
+        return self.questions[0]
     }
 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="169" id="hDz-p3-5jw" customClass="QuizTableViewCell" customModule="QuizApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="169"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hDz-p3-5jw" id="RoJ-yU-cGj">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="169"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-Af-cq7">
+                        <rect key="frame" x="40" y="30" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="MLa-2c-NOd"/>
+                            <constraint firstAttribute="width" constant="100" id="MpW-kC-iVd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-SX-A1L">
+                        <rect key="frame" x="152" y="40" width="308" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="0QJ-fy-YtE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-YX-Oxv">
+                        <rect key="frame" x="385" y="21" width="15" height="12.5"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.30256503072119267" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="dbq-Y9-cgO"/>
+                            <constraint firstAttribute="height" constant="15" id="kUz-Di-gaX"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-YU-vDY">
+                        <rect key="frame" x="405" y="21" width="15" height="12.5"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.30256503070000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Db8-Yo-clQ"/>
+                            <constraint firstAttribute="height" constant="15" id="NqH-KB-9JX"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="caI-8z-PiB">
+                        <rect key="frame" x="425" y="21" width="15" height="12.5"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.30256503070000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="EAq-hl-QNy"/>
+                            <constraint firstAttribute="height" constant="15" id="j11-FB-FXl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="roZ-PQ-Pbl">
+                        <rect key="frame" x="152" y="77" width="288" height="18"/>
+                        <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29852500503626117" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="roZ-PQ-Pbl" firstAttribute="top" secondItem="lRB-SX-A1L" secondAttribute="bottom" constant="12" id="2F6-gp-Z6r"/>
+                    <constraint firstItem="vhT-YX-Oxv" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="20" id="4LW-Pn-pRJ"/>
+                    <constraint firstItem="TkA-Af-cq7" firstAttribute="centerY" secondItem="RoJ-yU-cGj" secondAttribute="centerY" id="DJ1-PF-auB"/>
+                    <constraint firstItem="lRB-SX-A1L" firstAttribute="leading" secondItem="TkA-Af-cq7" secondAttribute="trailing" constant="12" id="HZw-Hq-3B6"/>
+                    <constraint firstItem="lRB-SX-A1L" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="40" id="LKg-SX-w2g"/>
+                    <constraint firstAttribute="trailing" secondItem="caI-8z-PiB" secondAttribute="trailing" constant="40" id="TVF-OJ-Xbs"/>
+                    <constraint firstItem="Md7-YU-vDY" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="20" id="aII-QQ-Aih"/>
+                    <constraint firstAttribute="trailing" secondItem="lRB-SX-A1L" secondAttribute="trailing" constant="20" id="cvq-eB-5WJ"/>
+                    <constraint firstAttribute="bottom" secondItem="TkA-Af-cq7" secondAttribute="bottom" constant="30" id="fMu-B1-Lof"/>
+                    <constraint firstItem="roZ-PQ-Pbl" firstAttribute="leading" secondItem="TkA-Af-cq7" secondAttribute="trailing" constant="12" id="goc-d4-TmX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="roZ-PQ-Pbl" secondAttribute="trailing" constant="20" id="h06-VN-PxD"/>
+                    <constraint firstItem="Md7-YU-vDY" firstAttribute="leading" secondItem="vhT-YX-Oxv" secondAttribute="trailing" constant="5" id="m0K-BA-0v4"/>
+                    <constraint firstItem="TkA-Af-cq7" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="30" id="pEb-eg-bgc"/>
+                    <constraint firstItem="caI-8z-PiB" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="20" id="seS-tX-RBv"/>
+                    <constraint firstItem="TkA-Af-cq7" firstAttribute="leading" secondItem="RoJ-yU-cGj" secondAttribute="leading" constant="40" id="v0Q-eI-Vl1"/>
+                    <constraint firstItem="caI-8z-PiB" firstAttribute="leading" secondItem="Md7-YU-vDY" secondAttribute="trailing" constant="5" id="ydl-AE-5YS"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="roZ-PQ-Pbl" secondAttribute="bottom" constant="30" id="yhX-KM-WKk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="roZ-PQ-Pbl" id="wxg-zB-NKw"/>
+                <outlet property="quizImageView" destination="TkA-Af-cq7" id="Ota-RG-Znp"/>
+                <outlet property="titleLabel" destination="lRB-SX-A1L" id="bRE-F4-t1K"/>
+                <outletCollection property="levelIcons" destination="vhT-YX-Oxv" collectionClass="NSMutableArray" id="Hh3-EC-uVK"/>
+                <outletCollection property="levelIcons" destination="Md7-YU-vDY" collectionClass="NSMutableArray" id="Tqp-SA-YQd"/>
+                <outletCollection property="levelIcons" destination="caI-8z-PiB" collectionClass="NSMutableArray" id="bgG-sj-cP8"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="33.816964285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
+    </resources>
+</document>
