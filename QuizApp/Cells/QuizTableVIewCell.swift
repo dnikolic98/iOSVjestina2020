@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
+protocol PreviewQuestionDelegate {
+    func didPreviewQuestionStart(question: Question)
+    func didPreviewQuestionEnd()
+}
+
 class QuizTableViewCell: UITableViewCell {
+    var questions: [Question]!
+    var previewQuestionDelegate: PreviewQuestionDelegate!
+    
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var quizImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -19,6 +27,7 @@ class QuizTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureLevelIcons()
+        self.setupGestureRecognizer()
     }
     
     override func prepareForReuse() {
@@ -31,7 +40,16 @@ class QuizTableViewCell: UITableViewCell {
         }
     }
     
+    func setupGestureRecognizer(){
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.addGestureRecognizer(lpgr)
+    }
+    
     func setup(quiz: QuizCellModel) {
+        self.questions = quiz.questions
         self.titleLabel.text = quiz.title
         self.descriptionLabel.text = quiz.description
         
@@ -44,8 +62,8 @@ class QuizTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.quizImageView.image = image
             }
-            
         }
+        
     }
     
     private func configureLevelIcons(){
@@ -55,4 +73,20 @@ class QuizTableViewCell: UITableViewCell {
         }
     }
     
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizer.State.ended {
+            if let question = self.getQuestionPreview() {
+                previewQuestionDelegate.didPreviewQuestionStart(question: question)
+            }
+        } else {
+            previewQuestionDelegate.didPreviewQuestionEnd()
+        }
+    }
+    
+    func getQuestionPreview() -> Question?{
+        if self.questions.count == 0{
+            return nil
+        }
+        return self.questions[0]
+    }
 }

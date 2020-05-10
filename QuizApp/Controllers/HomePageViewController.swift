@@ -70,9 +70,6 @@ class HomePageViewController: UIViewController {
         blurView.frame = view.frame
         blurView.isHidden = true
         view.addSubview(blurView)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        blurView.addGestureRecognizer(tap)
     }
     
     func setupQuestionView(){
@@ -111,10 +108,6 @@ class HomePageViewController: UIViewController {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
-    }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        hideDetailScreen()
     }
     
     func refreshTableViewHeight(){
@@ -185,11 +178,6 @@ extension HomePageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let quiz = viewModel.getQuiz(indexPath: indexPath)
-        if let question = quiz?.getQuestionPreview() {
-            showDetailScreen(question: question)
-        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -210,6 +198,7 @@ extension HomePageViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! QuizTableViewCell
         if let quizCellModel = viewModel.quiz(indexPath: indexPath) {
             cell.setup(quiz: quizCellModel)
+            cell.previewQuestionDelegate = self
         }
         return cell
     }
@@ -222,4 +211,15 @@ extension HomePageViewController: UITableViewDataSource {
         let category = Category.allCases[section]
         return viewModel.numberOfQuizzesInCategory(category: category)
     }
+}
+
+extension HomePageViewController: PreviewQuestionDelegate {
+    func didPreviewQuestionStart(question: Question) {
+        showDetailScreen(question: question)
+    }
+    
+    func didPreviewQuestionEnd() {
+        hideDetailScreen()
+    }
+    
 }

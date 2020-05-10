@@ -41,11 +41,4 @@ class Quiz{
             return nil
         }
     }
-    
-    func getQuestionPreview() -> Question?{
-        if self.questions.count == 0{
-            return nil
-        }
-        return self.questions[0]
-    }
 }
