@@ -6,8 +6,8 @@
 //  Copyright © 2020 Dario Nikolić. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Kingfisher
 
 protocol PreviewQuestionDelegate {
     func didPreviewQuestionStart(question: Question)
@@ -26,8 +26,9 @@ class QuizTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.configureLevelIcons()
+        self.setupLevelIcons()
         self.setupGestureRecognizer()
+        self.quizImageView.layer.cornerRadius = 10
     }
     
     override func prepareForReuse() {
@@ -61,16 +62,13 @@ class QuizTableViewCell: UITableViewCell {
         bgColorView.backgroundColor = quiz.category.color
         self.selectedBackgroundView = bgColorView
         
-        let quizImageService = QuizImageService()
-        quizImageService.fetchImage(quiz: quiz) { (image) in
-            DispatchQueue.main.async {
-                self.quizImageView.image = image
-            }
-        }
         
+        if let url = quiz.imageUrl {
+            self.quizImageView.kf.setImage(with: url)
+        }
     }
     
-    private func configureLevelIcons(){
+    private func setupLevelIcons(){
         for icon in self.levelIcons{
             icon.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/4))
             icon.tintColor = Colors.white_30

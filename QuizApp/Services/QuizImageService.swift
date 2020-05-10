@@ -12,7 +12,7 @@ import UIKit
 class QuizImageService {
     func fetchImage(quiz: QuizCellModel, completion: @escaping ((UIImage?) -> Void)){
         let urlString = quiz.imageUrl
-        if let url = URL(string: urlString) {
+        if let url = urlString {
             let request = URLRequest(url: url)
             
             let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in

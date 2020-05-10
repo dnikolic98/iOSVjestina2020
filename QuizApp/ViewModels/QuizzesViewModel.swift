@@ -15,7 +15,7 @@ struct QuizCellModel {
     let description: String
     let category: Category
     let level: Int
-    let imageUrl: String
+    let imageUrl: URL?
     let questions: [Question]
     
     init(quiz: Quiz) {
@@ -23,7 +23,7 @@ struct QuizCellModel {
         self.description = quiz.description
         self.category = quiz.category
         self.level = quiz.level
-        self.imageUrl = quiz.imageUrl
+        self.imageUrl = URL(string: quiz.imageUrl)
         self.questions = quiz.questions
     }
 }

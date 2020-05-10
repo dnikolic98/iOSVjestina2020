@@ -73,8 +73,12 @@ class HomePageViewController: UIViewController {
     }
     
     func setupQuestionView(){
-        questionView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 340, height: 410)))
-        questionView.center = CGPoint(x: view.frame.size.width  / 2, y: view.frame.size.height / 2)
+        let deviceWidth = UIScreen.main.bounds.size.width
+        let deviceHeight = UIScreen.main.bounds.size.height
+        let frameSize: CGPoint = CGPoint(x: deviceWidth*0.5, y: deviceHeight*0.5)
+        
+        questionView = QuestionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: deviceWidth*0.8, height: deviceHeight*0.65)))
+        questionView.center = frameSize
         questionView.clipsToBounds = true
         questionView.layer.cornerRadius = 10
         questionView.sizeToFit()
