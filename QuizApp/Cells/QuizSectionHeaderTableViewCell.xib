@@ -21,8 +21,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk7-99-gjF">
-                        <rect key="frame" x="44" y="8" width="350" height="28"/>
-                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="22"/>
+                        <rect key="frame" x="20" y="7" width="374" height="30.5"/>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="24"/>
                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,7 +31,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="xk7-99-gjF" secondAttribute="trailing" constant="20" id="8aP-I1-Lg6"/>
                     <constraint firstItem="xk7-99-gjF" firstAttribute="centerY" secondItem="hR4-Bk-agi" secondAttribute="centerY" id="nV9-zt-Rbb"/>
-                    <constraint firstItem="xk7-99-gjF" firstAttribute="leading" secondItem="hR4-Bk-agi" secondAttribute="leading" constant="44" id="rzp-nL-Une"/>
+                    <constraint firstItem="xk7-99-gjF" firstAttribute="leading" secondItem="hR4-Bk-agi" secondAttribute="leading" constant="20" id="qEZ-hj-syt"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

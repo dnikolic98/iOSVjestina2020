@@ -24,6 +24,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var funFactDetails: UILabel!
     @IBOutlet weak var funFact: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     @IBAction func getQuizButtonTapped(_ sender: Any) {
         bindViewModel()
@@ -54,6 +55,7 @@ class HomePageViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(HomePageViewController.refresh), for: UIControl.Event.valueChanged)
@@ -105,6 +107,7 @@ class HomePageViewController: UIViewController {
     
     @objc func refresh() {
         DispatchQueue.main.async {
+            self.refreshTableViewHeight()
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
@@ -112,6 +115,16 @@ class HomePageViewController: UIViewController {
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         hideDetailScreen()
+    }
+    
+    func refreshTableViewHeight(){
+        let rowHeight = 170
+        let sectionHeight = 50
+        
+        let rows = viewModel.numberOfQuizzes()
+        let sections = Category.allCases.count
+        
+        tableViewHeightConstraint.constant = CGFloat(rows * rowHeight + sections * sectionHeight)
     }
     
     func showDetailScreen(question: Question) {
