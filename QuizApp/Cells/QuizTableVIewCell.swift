@@ -57,6 +57,10 @@ class QuizTableViewCell: UITableViewCell {
             self.levelIcons[i].tintColor = quiz.category.color
         }
         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = quiz.category.color
+        self.selectedBackgroundView = bgColorView
+        
         let quizImageService = QuizImageService()
         quizImageService.fetchImage(quiz: quiz) { (image) in
             DispatchQueue.main.async {

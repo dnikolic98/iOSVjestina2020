@@ -30,8 +30,8 @@
                             <constraint firstAttribute="width" constant="100" id="MpW-kC-iVd"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-SX-A1L">
-                        <rect key="frame" x="152" y="40" width="308" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Football" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-SX-A1L">
+                        <rect key="frame" x="152" y="40" width="288" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="0QJ-fy-YtE"/>
                         </constraints>
@@ -63,8 +63,8 @@
                             <constraint firstAttribute="height" constant="15" id="j11-FB-FXl"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="roZ-PQ-Pbl">
-                        <rect key="frame" x="152" y="77" width="288" height="18"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="roZ-PQ-Pbl">
+                        <rect key="frame" x="152" y="77" width="268" height="18"/>
                         <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -79,10 +79,10 @@
                     <constraint firstItem="lRB-SX-A1L" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="40" id="LKg-SX-w2g"/>
                     <constraint firstAttribute="trailing" secondItem="caI-8z-PiB" secondAttribute="trailing" constant="40" id="TVF-OJ-Xbs"/>
                     <constraint firstItem="Md7-YU-vDY" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="20" id="aII-QQ-Aih"/>
-                    <constraint firstAttribute="trailing" secondItem="lRB-SX-A1L" secondAttribute="trailing" constant="20" id="cvq-eB-5WJ"/>
+                    <constraint firstAttribute="trailing" secondItem="lRB-SX-A1L" secondAttribute="trailing" constant="40" id="cvq-eB-5WJ"/>
                     <constraint firstAttribute="bottom" secondItem="TkA-Af-cq7" secondAttribute="bottom" constant="30" id="fMu-B1-Lof"/>
                     <constraint firstItem="roZ-PQ-Pbl" firstAttribute="leading" secondItem="TkA-Af-cq7" secondAttribute="trailing" constant="12" id="goc-d4-TmX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="roZ-PQ-Pbl" secondAttribute="trailing" constant="20" id="h06-VN-PxD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="roZ-PQ-Pbl" secondAttribute="trailing" constant="40" id="h06-VN-PxD"/>
                     <constraint firstItem="Md7-YU-vDY" firstAttribute="leading" secondItem="vhT-YX-Oxv" secondAttribute="trailing" constant="5" id="m0K-BA-0v4"/>
                     <constraint firstItem="TkA-Af-cq7" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="30" id="pEb-eg-bgc"/>
                     <constraint firstItem="caI-8z-PiB" firstAttribute="top" secondItem="RoJ-yU-cGj" secondAttribute="top" constant="20" id="seS-tX-RBv"/>

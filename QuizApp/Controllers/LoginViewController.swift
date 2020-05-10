@@ -16,11 +16,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func showPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        if passwordTextField.isSecureTextEntry {
+            showPassButton.tintColor = Colors.white_60
+        } else {
+            showPassButton.tintColor = Colors.white
+        }
     }
     
     @IBAction func loginTapped(_ sender: Any) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        if email.count == 0 {
+            emailTextField.shake()
+            return
+        }
+        if password.count == 0 {
+            passwordTextField.shake()
+            self.showPassButton.shake()
+            return
+        }
         
         login(email: email, password: password)
     }
@@ -30,7 +44,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         let loginService = LoginService()
         loginService.login(username: email, password: password) { (authToken) in
             DispatchQueue.main.async {
-                guard let authToken = authToken else { return }
+                guard let authToken = authToken else {
+                    self.passwordTextField.shake()
+                    self.showPassButton.shake()
+                    return
+                }
                 Authorization.loginUser(authToken: authToken)
                 
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -43,12 +61,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         view.setGradientBackground(colorOne: Colors.lightPurple, colorTwo: Colors.darkBlue)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
         setupTextField(textField: emailTextField)
         setupTextField(textField: passwordTextField)
         setupLoginButton()
+        showPassButton.tintColor = Colors.white_60
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -98,7 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -106,7 +124,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
