@@ -25,6 +25,9 @@
 		522886B3246832A900861E92 /* QuizSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */; };
 		523109762468782A00FE69F1 /* UIDynamicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523109752468782A00FE69F1 /* UIDynamicTableView.swift */; };
 		5231097A24688E8700FE69F1 /* ShakewarningUiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231097924688E8700FE69F1 /* ShakewarningUiViewExtension.swift */; };
+		523A8E4B248185B100959E75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E4A248185B100959E75 /* SearchViewController.swift */; };
+		523A8E4D248185CD00959E75 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E4C248185CD00959E75 /* SettingsViewController.swift */; };
+		523EDAA72479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */; };
 		524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA34824615C7E00F69467 /* AppDelegate.swift */; };
 		524DA35224615C8100F69467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524DA35124615C8100F69467 /* Assets.xcassets */; };
 		524DA35524615C8100F69467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524DA35324615C8100F69467 /* LaunchScreen.storyboard */; };
@@ -44,6 +47,7 @@
 		524DA3C72463563900F69467 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BB2463563900F69467 /* SourceSansPro-BoldItalic.ttf */; };
 		524DA3C82463563900F69467 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BC2463563900F69467 /* SourceSansPro-Italic.ttf */; };
 		524DA3C92463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BD2463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		5290B56724814D33001ADF1E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290B56624814D33001ADF1E /* TabBarViewController.swift */; };
 		DF414ED8136BA61136D290EA /* Pods_QuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1E7880488B65045C75F533 /* Pods_QuizApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,9 @@
 		522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		523109752468782A00FE69F1 /* UIDynamicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDynamicTableView.swift; sourceTree = "<group>"; };
 		5231097924688E8700FE69F1 /* ShakewarningUiViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakewarningUiViewExtension.swift; sourceTree = "<group>"; };
+		523A8E4A248185B100959E75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		523A8E4C248185CD00959E75 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutAnimationsUiViewExtension.swift; sourceTree = "<group>"; };
 		524DA34524615C7E00F69467 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DA34824615C7E00F69467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524DA35124615C8100F69467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		524DA3BB2463563900F69467 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		524DA3BC2463563900F69467 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		524DA3BD2463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		5290B56624814D33001ADF1E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6C1E7880488B65045C75F533 /* Pods_QuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +129,7 @@
 				524DA38C2462ED9B00F69467 /* GradientExtensionUiView.swift */,
 				522886912465C68200861E92 /* Authorization.swift */,
 				523109752468782A00FE69F1 /* UIDynamicTableView.swift */,
+				523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +223,9 @@
 				524DA3902463008000F69467 /* HomePageViewController.xib */,
 				52288689246569DD00861E92 /* LoginViewController.swift */,
 				5228868B24656A1D00861E92 /* LoginViewController.xib */,
+				5290B56624814D33001ADF1E /* TabBarViewController.swift */,
+				523A8E4A248185B100959E75 /* SearchViewController.swift */,
+				523A8E4C248185CD00959E75 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,17 +414,21 @@
 				522886922465C68200861E92 /* Authorization.swift in Sources */,
 				5228868A246569DD00861E92 /* LoginViewController.swift in Sources */,
 				522886862465628F00861E92 /* Category.swift in Sources */,
+				5290B56724814D33001ADF1E /* TabBarViewController.swift in Sources */,
 				522886882465679E00861E92 /* QuizImageService.swift in Sources */,
 				5228867E24641E8A00861E92 /* Question.swift in Sources */,
 				524DA38F2462FF0700F69467 /* HomePageViewController.swift in Sources */,
 				522886B12468328500861E92 /* QuizSectionHeaderTableViewCell.swift in Sources */,
 				5228867824641CA700861E92 /* Quiz.swift in Sources */,
+				523A8E4D248185CD00959E75 /* SettingsViewController.swift in Sources */,
 				524DA38D2462ED9B00F69467 /* GradientExtensionUiView.swift in Sources */,
 				524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */,
+				523A8E4B248185B100959E75 /* SearchViewController.swift in Sources */,
 				524DA38B2462EC4F00F69467 /* Constants.swift in Sources */,
 				523109762468782A00FE69F1 /* UIDynamicTableView.swift in Sources */,
 				522886822464870B00861E92 /* QuestionView.swift in Sources */,
 				5228867C24641CEF00861E92 /* LoginService.swift in Sources */,
+				523EDAA72479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

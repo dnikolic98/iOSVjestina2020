@@ -45,6 +45,16 @@ class HomePageViewController: UIViewController {
         setupQuestionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func setupGetQuizButton(){
         getQuizButton.setTitleColor(Colors.purple, for: .normal)
         getQuizButton.backgroundColor = Colors.white
@@ -62,6 +72,8 @@ class HomePageViewController: UIViewController {
         tableView.refreshControl = refreshControl
         
         tableView.register(UINib(nibName: "QuizTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        
+        tableViewHeightConstraint.constant = CGFloat(0)
     }
     
     func setupBlurView(){
@@ -95,12 +107,14 @@ class HomePageViewController: UIViewController {
                     self.showFunFact(word: "NBA")
                     self.hideErrorMessage()
                     self.tableView.isHidden = false
+                    self.refreshTableViewHeight()
                 }
             } else {
                 DispatchQueue.main.async {
                     self.showErrorMessage()
                     self.hideFunFact()
                     self.tableView.isHidden = true
+                    self.tableViewHeightConstraint.constant = CGFloat(0)
                 }
             }
         }

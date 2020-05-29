@@ -37,16 +37,16 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SB-et-Tvk" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="773"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PopQuiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-36-Ing">
-                                    <rect key="frame" x="161" y="25" width="92" height="28"/>
+                                    <rect key="frame" x="162.5" y="25" width="89" height="30.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN4-b9-jhq">
-                                    <rect key="frame" x="32" y="88" width="350" height="43"/>
+                                    <rect key="frame" x="32" y="90.5" width="350" height="45"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                     <state key="normal" title="Get Quiz"/>
@@ -55,19 +55,19 @@
                                     </connections>
                                 </button>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💡 Fun Fact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdT-hH-qGy">
-                                    <rect key="frame" x="32" y="166" width="135.5" height="30.5"/>
+                                    <rect key="frame" x="32" y="170.5" width="127.5" height="33"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-Fd-dDc" userLabel="factDetails">
-                                    <rect key="frame" x="32" y="206.5" width="350" height="23.5"/>
+                                    <rect key="frame" x="32" y="213.5" width="350" height="25.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WZr-Fa-kX7">
-                                    <rect key="frame" x="173.5" y="349" width="67" height="66"/>
+                                    <rect key="frame" x="173.5" y="353.5" width="67" height="66"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="67" id="Oto-Bd-x8M"/>
@@ -75,20 +75,20 @@
                                     </constraints>
                                 </imageView>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVz-zo-ELk">
-                                    <rect key="frame" x="176.5" y="425.5" width="61" height="33"/>
+                                    <rect key="frame" x="175" y="430" width="64.5" height="35.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="28"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tH4-Qh-Y5M" customClass="UIDynamicTableView" customModule="QuizApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="262" width="414" height="502"/>
+                                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tH4-Qh-Y5M" customClass="UIDynamicTableView" customModule="QuizApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="271" width="414" height="502"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="502" id="qxt-CA-bbk"/>
                                     </constraints>
                                 </tableView>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data can’t be reached. Please try again " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2g-hp-edG">
-                                    <rect key="frame" x="126" y="468.5" width="162.5" height="37.5"/>
+                                    <rect key="frame" x="133" y="475.5" width="148.5" height="40.5"/>
                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>

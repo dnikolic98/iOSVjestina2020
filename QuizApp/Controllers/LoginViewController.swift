@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
         if password.count == 0 {
             passwordTextField.shake()
-            self.showPassButton.shake()
+            self.showPassButton.shake()  
             return
         }
         
