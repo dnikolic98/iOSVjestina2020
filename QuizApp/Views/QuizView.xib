@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizView" customModule="QuizApp" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="c0k-ex-AZt" id="g4b-Qc-N6G"/>
+                <outlet property="quizImageView" destination="53K-2w-d7S" id="T2O-8G-xBc"/>
+                <outlet property="startButton" destination="GbR-1q-ivu" id="MLd-E8-9r3"/>
+                <outlet property="titleLabel" destination="2ib-le-zL8" id="SfW-LI-QED"/>
+                <outlet property="view" destination="iN0-l3-epB" id="hTO-Ty-Mpo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBA Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="2ib-le-zL8">
+                    <rect key="frame" x="20" y="25" width="297" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="Ylo-m6-fsF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz description that can usually span over multiple lines " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="c0k-ex-AZt">
+                    <rect key="frame" x="20" y="85" width="297" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="zbs-PM-pgg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="53K-2w-d7S">
+                    <rect key="frame" x="20" y="150" width="297" height="174"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbR-1q-ivu">
+                    <rect key="frame" x="20" y="344" width="297" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="3Mi-Tt-5sI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                    <state key="normal" title="Start Quiz">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="startQuizPressed:" destination="-1" eventType="touchUpInside" id="PPB-lO-fAa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.29815924657534248" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2ib-le-zL8" secondAttribute="trailing" constant="20" id="4Y5-Db-U5a"/>
+                <constraint firstItem="GbR-1q-ivu" firstAttribute="top" secondItem="53K-2w-d7S" secondAttribute="bottom" constant="20" id="Cb6-Qr-Uks"/>
+                <constraint firstItem="c0k-ex-AZt" firstAttribute="top" secondItem="2ib-le-zL8" secondAttribute="bottom" constant="20" id="Jbd-FQ-vIm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c0k-ex-AZt" secondAttribute="trailing" constant="20" id="QdN-3S-hJH"/>
+                <constraint firstAttribute="bottom" secondItem="GbR-1q-ivu" secondAttribute="bottom" constant="25" id="Ugz-fV-Noq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="53K-2w-d7S" secondAttribute="trailing" constant="20" id="WaA-ZD-cOY"/>
+                <constraint firstItem="GbR-1q-ivu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Wfy-n6-y8u"/>
+                <constraint firstItem="53K-2w-d7S" firstAttribute="top" secondItem="c0k-ex-AZt" secondAttribute="bottom" constant="20" id="a6J-hv-bqM"/>
+                <constraint firstItem="c0k-ex-AZt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="hi1-yw-Bqn"/>
+                <constraint firstItem="2ib-le-zL8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="isR-fr-xrC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GbR-1q-ivu" secondAttribute="trailing" constant="20" id="nWm-Ox-2eD"/>
+                <constraint firstItem="53K-2w-d7S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pdV-Gj-kNX"/>
+                <constraint firstItem="2ib-le-zL8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="v77-ye-zPM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="76.08695652173914" y="139.28571428571428"/>
+        </view>
+    </objects>
+</document>

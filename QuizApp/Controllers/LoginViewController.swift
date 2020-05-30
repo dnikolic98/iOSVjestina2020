@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     func setupLoginButton(){
-        loginButton.setTitleColor(Colors.purple, for: .normal)
+        loginButton.setTitleColor(Colors.darkPurple, for: .normal)
         loginButton.backgroundColor = Colors.white
         loginButton.layer.cornerRadius = 23
     }

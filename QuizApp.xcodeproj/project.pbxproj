@@ -27,6 +27,9 @@
 		5231097A24688E8700FE69F1 /* ShakewarningUiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231097924688E8700FE69F1 /* ShakewarningUiViewExtension.swift */; };
 		523A8E4B248185B100959E75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E4A248185B100959E75 /* SearchViewController.swift */; };
 		523A8E4D248185CD00959E75 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E4C248185CD00959E75 /* SettingsViewController.swift */; };
+		523A8E4F2481961700959E75 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E4E2481961700959E75 /* LeaderboardView.swift */; };
+		523A8E522481969B00959E75 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A8E502481969B00959E75 /* QuizViewController.swift */; };
+		523A8E532481969B00959E75 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523A8E512481969B00959E75 /* QuizViewController.xib */; };
 		523EDAA72479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */; };
 		524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA34824615C7E00F69467 /* AppDelegate.swift */; };
 		524DA35224615C8100F69467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524DA35124615C8100F69467 /* Assets.xcassets */; };
@@ -47,7 +50,13 @@
 		524DA3C72463563900F69467 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BB2463563900F69467 /* SourceSansPro-BoldItalic.ttf */; };
 		524DA3C82463563900F69467 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BC2463563900F69467 /* SourceSansPro-Italic.ttf */; };
 		524DA3C92463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524DA3BD2463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		528B13B42482E477009568CD /* LeaderboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528B13B32482E477009568CD /* LeaderboardView.xib */; };
+		528B13B62482E62D009568CD /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B13B52482E62D009568CD /* LeaderboardTableViewCell.swift */; };
 		5290B56724814D33001ADF1E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290B56624814D33001ADF1E /* TabBarViewController.swift */; };
+		529335F0248327830009A790 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529335EF248327830009A790 /* SettingsViewController.xib */; };
+		52D51DE6248281780053A5F1 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D51DE4248281770053A5F1 /* QuizView.xib */; };
+		52D51DE7248281780053A5F1 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D51DE5248281780053A5F1 /* QuizView.swift */; };
+		52D51DE92482A2360053A5F1 /* BordersUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D51DE82482A2360053A5F1 /* BordersUIViewExtension.swift */; };
 		DF414ED8136BA61136D290EA /* Pods_QuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1E7880488B65045C75F533 /* Pods_QuizApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +83,9 @@
 		5231097924688E8700FE69F1 /* ShakewarningUiViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakewarningUiViewExtension.swift; sourceTree = "<group>"; };
 		523A8E4A248185B100959E75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		523A8E4C248185CD00959E75 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		523A8E4E2481961700959E75 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		523A8E502481969B00959E75 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		523A8E512481969B00959E75 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutAnimationsUiViewExtension.swift; sourceTree = "<group>"; };
 		524DA34524615C7E00F69467 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524DA34824615C7E00F69467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +108,13 @@
 		524DA3BB2463563900F69467 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		524DA3BC2463563900F69467 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		524DA3BD2463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		528B13B32482E477009568CD /* LeaderboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardView.xib; sourceTree = "<group>"; };
+		528B13B52482E62D009568CD /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		5290B56624814D33001ADF1E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		529335EF248327830009A790 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		52D51DE4248281770053A5F1 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
+		52D51DE5248281780053A5F1 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		52D51DE82482A2360053A5F1 /* BordersUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersUIViewExtension.swift; sourceTree = "<group>"; };
 		6C1E7880488B65045C75F533 /* Pods_QuizApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +148,7 @@
 				522886912465C68200861E92 /* Authorization.swift */,
 				523109752468782A00FE69F1 /* UIDynamicTableView.swift */,
 				523EDAA62479A9EA00C909B8 /* InOutAnimationsUiViewExtension.swift */,
+				52D51DE82482A2360053A5F1 /* BordersUIViewExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -141,6 +160,7 @@
 				522886A12465EC1400861E92 /* QuizTableViewCell.xib */,
 				522886B02468328500861E92 /* QuizSectionHeaderTableViewCell.swift */,
 				522886B2246832A900861E92 /* QuizSectionHeaderTableViewCell.xib */,
+				528B13B52482E62D009568CD /* LeaderboardTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -210,8 +230,12 @@
 		524DA37E24618BAB00F69467 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52D51DE5248281780053A5F1 /* QuizView.swift */,
+				52D51DE4248281770053A5F1 /* QuizView.xib */,
 				522886812464870B00861E92 /* QuestionView.swift */,
 				522886832464A10700861E92 /* QuestionView.xib */,
+				523A8E4E2481961700959E75 /* LeaderboardView.swift */,
+				528B13B32482E477009568CD /* LeaderboardView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +250,9 @@
 				5290B56624814D33001ADF1E /* TabBarViewController.swift */,
 				523A8E4A248185B100959E75 /* SearchViewController.swift */,
 				523A8E4C248185CD00959E75 /* SettingsViewController.swift */,
+				529335EF248327830009A790 /* SettingsViewController.xib */,
+				523A8E502481969B00959E75 /* QuizViewController.swift */,
+				523A8E512481969B00959E75 /* QuizViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -336,21 +363,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D51DE6248281780053A5F1 /* QuizView.xib in Resources */,
 				524DA3BF2463563900F69467 /* SourceSansPro-Regular.ttf in Resources */,
 				524DA3C92463563900F69467 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				522886A22465EC1400861E92 /* QuizTableViewCell.xib in Resources */,
 				524DA3C22463563900F69467 /* SourceSansPro-SemiBold.ttf in Resources */,
 				524DA3BE2463563900F69467 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				528B13B42482E477009568CD /* LeaderboardView.xib in Resources */,
 				5228868C24656A1D00861E92 /* LoginViewController.xib in Resources */,
 				522886B3246832A900861E92 /* QuizSectionHeaderTableViewCell.xib in Resources */,
 				522886842464A10700861E92 /* QuestionView.xib in Resources */,
 				524DA3C42463563900F69467 /* SourceSansPro-Light.ttf in Resources */,
 				524DA3C32463563900F69467 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				524DA3C02463563900F69467 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				529335F0248327830009A790 /* SettingsViewController.xib in Resources */,
 				524DA35524615C8100F69467 /* LaunchScreen.storyboard in Resources */,
 				524DA35224615C8100F69467 /* Assets.xcassets in Resources */,
 				524DA3912463008000F69467 /* HomePageViewController.xib in Resources */,
 				524DA3C52463563900F69467 /* SourceSansPro-Bold.ttf in Resources */,
+				523A8E532481969B00959E75 /* QuizViewController.xib in Resources */,
 				524DA3C12463563900F69467 /* SourceSansPro-Black.ttf in Resources */,
 				524DA3C62463563900F69467 /* SourceSansPro-LightItalic.ttf in Resources */,
 				524DA3C82463563900F69467 /* SourceSansPro-Italic.ttf in Resources */,
@@ -409,7 +440,9 @@
 			files = (
 				522886A92466B89500861E92 /* QuizTableVIewCell.swift in Sources */,
 				5228867A24641CD700861E92 /* QuizzesService.swift in Sources */,
+				52D51DE7248281780053A5F1 /* QuizView.swift in Sources */,
 				5231097A24688E8700FE69F1 /* ShakewarningUiViewExtension.swift in Sources */,
+				523A8E522481969B00959E75 /* QuizViewController.swift in Sources */,
 				522886A72466A5DA00861E92 /* QuizzesViewModel.swift in Sources */,
 				522886922465C68200861E92 /* Authorization.swift in Sources */,
 				5228868A246569DD00861E92 /* LoginViewController.swift in Sources */,
@@ -419,9 +452,12 @@
 				5228867E24641E8A00861E92 /* Question.swift in Sources */,
 				524DA38F2462FF0700F69467 /* HomePageViewController.swift in Sources */,
 				522886B12468328500861E92 /* QuizSectionHeaderTableViewCell.swift in Sources */,
+				52D51DE92482A2360053A5F1 /* BordersUIViewExtension.swift in Sources */,
 				5228867824641CA700861E92 /* Quiz.swift in Sources */,
 				523A8E4D248185CD00959E75 /* SettingsViewController.swift in Sources */,
 				524DA38D2462ED9B00F69467 /* GradientExtensionUiView.swift in Sources */,
+				528B13B62482E62D009568CD /* LeaderboardTableViewCell.swift in Sources */,
+				523A8E4F2481961700959E75 /* LeaderboardView.swift in Sources */,
 				524DA34924615C7E00F69467 /* AppDelegate.swift in Sources */,
 				523A8E4B248185B100959E75 /* SearchViewController.swift in Sources */,
 				524DA38B2462EC4F00F69467 /* Constants.swift in Sources */,
@@ -565,6 +601,7 @@
 			baseConfigurationReference = 25498E13708EA8AFCED706A3 /* Pods-QuizApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -583,6 +620,7 @@
 			baseConfigurationReference = 514862B00FEAF26D98546169 /* Pods-QuizApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

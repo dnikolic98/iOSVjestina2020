@@ -25,6 +25,8 @@ class TabBarViewController: UITabBarController {
         
         tabBar.tintColor = Colors.darkPurple
         tabBar.backgroundColor = Colors.white
+        
+        
     }
     
 }

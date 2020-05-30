@@ -12,6 +12,6 @@ class SettingsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.setGradientBackground(colorOne: Colors.lightPurple, colorTwo: Colors.darkBlue)
     }
 }

@@ -43,6 +43,9 @@ class HomePageViewController: UIViewController {
         setupTableView()
         setupBlurView()
         setupQuestionView()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +59,7 @@ class HomePageViewController: UIViewController {
     }
     
     func setupGetQuizButton(){
-        getQuizButton.setTitleColor(Colors.purple, for: .normal)
+        getQuizButton.setTitleColor(Colors.darkPurple, for: .normal)
         getQuizButton.backgroundColor = Colors.white
         getQuizButton.layer.cornerRadius = 23
     }
@@ -196,6 +199,13 @@ extension HomePageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let selectedQuiz = viewModel.quiz(indexPath: indexPath){
+            
+            
+            let quizViewController = QuizViewController(quiz: selectedQuiz)
+            navigationController?.pushViewController(quizViewController, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
