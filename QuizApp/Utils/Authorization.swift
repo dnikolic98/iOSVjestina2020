@@ -21,19 +21,23 @@ struct AuthToken {
 }
 
 class Authorization {
+    static let ACCES_TOKEN = "accessToken"
+    static let UID = "uid"
+    static let USERNAME = "username"
+    
     static func loginUser(authToken: AuthToken) {
-        UserDefaults.standard.set(authToken.accessToken, forKey: "accessToken")
-        UserDefaults.standard.set(authToken.uid, forKey: "uid")
-        UserDefaults.standard.set(authToken.username, forKey: "username")
+        UserDefaults.standard.set(authToken.accessToken, forKey: ACCES_TOKEN)
+        UserDefaults.standard.set(authToken.uid, forKey: UID)
+        UserDefaults.standard.set(authToken.username, forKey: USERNAME)
     }
     
     static func logoutUser() {
-        UserDefaults.standard.removeObject(forKey: "accessToken")
-        UserDefaults.standard.removeObject(forKey: "uid")
-        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: ACCES_TOKEN)
+        UserDefaults.standard.removeObject(forKey: UID)
+        UserDefaults.standard.removeObject(forKey: USERNAME)
     }
     
     static func isLoggedIn() -> Bool {
-        return UserDefaults.standard.string(forKey: "accessToken") != nil
+        return UserDefaults.standard.string(forKey: ACCES_TOKEN) != nil
     }
 }

@@ -6,9 +6,19 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="QuizApp" customModuleProvider="target">
             <connections>
+                <outlet property="logoutButton" destination="dcd-Qx-gcS" id="Ugk-vo-HyE"/>
+                <outlet property="usernameLabel" destination="p1s-wR-C2W" id="aTh-bm-Z7H"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FRF-nL-HU6"/>
             </connections>
         </placeholder>
@@ -16,7 +26,39 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcd-Qx-gcS">
+                    <rect key="frame" x="32" y="785" width="350" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                    <state key="normal" title="Log out"/>
+                    <connections>
+                        <action selector="logoutPressed:" destination="-1" eventType="touchUpInside" id="nUP-Zh-hel"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1s-wR-C2W">
+                    <rect key="frame" x="20" y="137" width="156.5" height="30.5"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-AL-RGg">
+                    <rect key="frame" x="20" y="114" width="67.5" height="18"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="p1s-wR-C2W" firstAttribute="top" secondItem="w6g-AL-RGg" secondAttribute="bottom" constant="5" id="4r5-JK-djo"/>
+                <constraint firstItem="w6g-AL-RGg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Rpi-qh-Gfl"/>
+                <constraint firstItem="w6g-AL-RGg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="70" id="bEv-pM-460"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dcd-Qx-gcS" secondAttribute="bottom" constant="32" id="cMx-xG-urU"/>
+                <constraint firstItem="dcd-Qx-gcS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="ozX-Md-zis"/>
+                <constraint firstItem="p1s-wR-C2W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="yNs-Ep-uT5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dcd-Qx-gcS" secondAttribute="trailing" constant="32" id="zmy-oc-RhQ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="101"/>
         </view>
