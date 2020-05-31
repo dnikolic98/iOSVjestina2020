@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -39,6 +39,9 @@
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="bEM-Ht-4qW"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-e5-hTF">
                             <rect key="frame" x="0.0" y="60" width="290" height="46"/>
@@ -49,6 +52,9 @@
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="AFY-Tm-hGQ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0b-zr-FR6">
                             <rect key="frame" x="0.0" y="120" width="290" height="46"/>
@@ -59,6 +65,9 @@
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="Zrn-wP-9az"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvc-0c-wVf">
                             <rect key="frame" x="0.0" y="180" width="290" height="46"/>
@@ -69,6 +78,9 @@
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="answerPressed:" destination="-1" eventType="touchUpInside" id="8ob-Dm-Qb2"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -83,7 +95,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="rUv-Nc-haZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0iX-Um-LOA"/>
                 <constraint firstItem="rWt-ay-iZK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AGS-li-jWb"/>

@@ -8,12 +8,39 @@
 
 import UIKit
 
+protocol QuestionAnsweredDelegate{
+    func didAnswerQuestion(isCorrect: Bool)
+}
+
 class QuestionView: UIView {
     private var question: Question?
+    var questionAnsweredDelegate: QuestionAnsweredDelegate!
     
     @IBOutlet var view: UIView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet var answerButtons:[UIButton]!
+    
+    @IBAction func answerPressed(_ sender: Any) {
+        if let pressedButton = sender as? UIButton, let question = self.question {
+            var isCorrect: Bool
+            let correctAnswer = question.answers[question.correctAnswer]
+            
+            if pressedButton.titleLabel?.text == correctAnswer{
+                correctAnswerAction(button: pressedButton)
+                isCorrect = true
+            } else {
+                let correctButton = getCorrectButton(correctAnswer: correctAnswer)
+                incorrectAnswerAction(pressedButton: pressedButton, correctButton: correctButton)
+                isCorrect = false
+            }
+
+            deactivateButtons()
+            questionAnsweredDelegate.didAnswerQuestion(isCorrect: isCorrect)
+        }
+        
+    }
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +59,6 @@ class QuestionView: UIView {
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
         
-        view.setGradientBackground(colorOne: Colors.lightPurple, colorTwo: Colors.darkBlue)
         for button in self.answerButtons{
             button.layer.cornerRadius = 23
         }
@@ -58,4 +84,25 @@ class QuestionView: UIView {
             button.setTitle("", for: .normal)
         }
     }
+    
+    func correctAnswerAction(button: UIButton){
+        button.backgroundColor = Colors.green
+    }
+    
+    func incorrectAnswerAction(pressedButton: UIButton, correctButton: UIButton){
+        pressedButton.backgroundColor = Colors.red
+        correctButton.backgroundColor = Colors.green
+    }
+    
+    func getCorrectButton(correctAnswer: String) -> UIButton {
+        var correctButton = UIButton()
+        for button in self.answerButtons {
+            if button.titleLabel?.text == correctAnswer{
+                correctButton = button
+                break
+            }
+        }
+        return correctButton
+    }
+    
 }

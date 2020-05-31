@@ -16,7 +16,7 @@ struct Colors {
     static let red              = UIColor(red: 252.0/255.0, green: 101.0/255.0, blue: 101.0/255.0, alpha: 1.0)
     static let orange           = UIColor(red: 255.0/255.0, green: 175.0/255.0, blue: 72.0/255.0, alpha: 1.0)
     static let blue             = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 228.0/255.0, alpha: 1.0)
-    static let green            = UIColor(red: 91.0/255.0, green: 197.0/255.0, blue: 159.0/255.0, alpha: 1.0)
+    static let green            = UIColor(red: 111.0/255.0, green: 207.0/255.0, blue: 151.0/255.0, alpha: 1.0)
     static let darkGrey         = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1.0)
     static let veryDarkGrey     = UIColor(red: 13.0/255.0, green: 13.0/255.0, blue: 13.0/255.0, alpha: 1.0)
     static let lightGrey        = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0)
@@ -29,5 +29,6 @@ struct Colors {
     static let gold             = UIColor(red: 242.0/255.0, green: 201.0/255.0, blue: 76.0/255.0, alpha: 1.0)
     static let lightBlue        = UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
     static let white_60         = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.6)
+    static let white_50         = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.5)
     static let white_30         = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.3)
 }

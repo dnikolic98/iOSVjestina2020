@@ -11,6 +11,7 @@ import Foundation
 
 struct QuizCellModel {
     
+    let id: Int
     let title: String
     let description: String
     let category: Category
@@ -19,6 +20,7 @@ struct QuizCellModel {
     let questions: [Question]
     
     init(quiz: Quiz) {
+        self.id = quiz.id
         self.title = quiz.title
         self.description = quiz.description
         self.category = quiz.category

@@ -11,6 +11,7 @@ import Foundation
 
 class QuizzesService {
     private let quizzesUrl = "https://iosquiz.herokuapp.com/api/quizzes"
+    private let resultUrl = "https://iosquiz.herokuapp.com/api/result"
     
     func fetchQuizzes(completion: @escaping (([Quiz]?) -> Void)) {
         if let url = URL(string: quizzesUrl) {
@@ -34,6 +35,36 @@ class QuizzesService {
                     
                 } else {
                     completion(nil)
+                }
+            }
+            dataTask.resume()
+        } else {
+            completion(nil)
+        }
+    }
+    
+    func postResult(quizId: Int,  numberOfCorrect: Int, time: Double, completion: @escaping ((HttpStatusCode?) -> Void)) {
+        if let url = URL(string: resultUrl) {
+            var request = URLRequest(url: url)
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            if let accessToken = Authorization.getAccesToken(){
+                request.addValue(accessToken, forHTTPHeaderField: "Authorization")
+            }
+            request.httpMethod = "POST"
+            
+            let parameters: [String: Any] = [
+                "quiz_id": quizId,
+                "user_id": Authorization.getUID(),
+                "time": time,
+                "no_of_correct": numberOfCorrect
+            ]
+            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+            
+            let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let httpResponse = response as? HTTPURLResponse {
+                    let httpStatusCode = HttpStatusCode(rawValue: httpResponse.statusCode)
+                    completion(httpStatusCode)
                 }
             }
             dataTask.resume()

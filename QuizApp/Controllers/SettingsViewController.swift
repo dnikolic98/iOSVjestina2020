@@ -26,6 +26,10 @@ class SettingsViewController: UIViewController{
         logoutButton.layer.cornerRadius = 23
         logoutButton.setTitleColor(Colors.red, for: .normal)
         
-        usernameLabel.text =  UserDefaults.standard.object(forKey: Authorization.USERNAME) as? String
+        if let username = Authorization.getUsername(){
+            usernameLabel.text =  username
+        } else {
+            usernameLabel.text =  "ERROR NO USERNAME FOUND"
+        }
     }
 }

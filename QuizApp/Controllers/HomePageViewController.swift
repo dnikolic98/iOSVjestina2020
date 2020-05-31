@@ -45,7 +45,6 @@ class HomePageViewController: UIViewController {
         setupQuestionView()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +97,7 @@ class HomePageViewController: UIViewController {
         questionView.layer.cornerRadius = 10
         questionView.sizeToFit()
         questionView.isHidden = true
+        questionView.setGradientBackground(colorOne: Colors.lightPurple, colorTwo: Colors.darkBlue)
         questionView.deactivateButtons()
         view.addSubview(questionView)
     }

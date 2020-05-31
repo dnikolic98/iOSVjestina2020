@@ -40,4 +40,16 @@ class Authorization {
     static func isLoggedIn() -> Bool {
         return UserDefaults.standard.string(forKey: ACCES_TOKEN) != nil
     }
+    
+    static func getUID() -> Int {
+        return UserDefaults.standard.integer(forKey: UID)
+    }
+    
+    static func getUsername() -> String? {
+        return UserDefaults.standard.string(forKey: USERNAME)
+    }
+    
+    static func getAccesToken() -> String? {
+        return UserDefaults.standard.string(forKey: ACCES_TOKEN)
+    }
 }

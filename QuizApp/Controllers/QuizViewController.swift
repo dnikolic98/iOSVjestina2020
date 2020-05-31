@@ -47,6 +47,7 @@ class QuizViewController: UIViewController {
         if var textAttributes = navigationController?.navigationBar.titleTextAttributes {
             textAttributes[NSAttributedString.Key.foregroundColor] = Colors.white
             navigationController?.navigationBar.titleTextAttributes = textAttributes
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         
         let yourBackImage = #imageLiteral(resourceName: "Back Button")
@@ -70,7 +71,6 @@ class QuizViewController: UIViewController {
         leaderboardView.clipsToBounds = true
         leaderboardView.sizeToFit()
         leaderboardView.isHidden = true
-//        view.addSubview(leaderboardView)
         leaderboardView.frame = UIApplication.shared.keyWindow!.frame
         UIApplication.shared.keyWindow!.addSubview(leaderboardView)
         
@@ -78,11 +78,13 @@ class QuizViewController: UIViewController {
     }
     
     func showLeaderboard(){
-        leaderboardView.isHidden = false
+        leaderboardView.animateInFromBottom()
+//        leaderboardView.isHidden = false
     }
     
     func hideLeaderboard(){
-        leaderboardView.isHidden = true
+        leaderboardView.animateOutToBottom()
+//        leaderboardView.isHidden = true
     }
 }
 
@@ -94,5 +96,7 @@ extension QuizViewController: LeaderboardDelegate{
 
 extension QuizViewController: QuizStartDelegate{
     func didStartQuiz() {
+        let startedQuizViewController = StartedQuizViewController(quiz: quiz)
+        navigationController?.pushViewController(startedQuizViewController, animated: true)
     }
 }
