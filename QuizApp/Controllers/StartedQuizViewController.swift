@@ -13,6 +13,7 @@ class StartedQuizViewController: UIViewController {
     var answers = [Bool]()
     var questionIndicatorViews = [UIView]()
     var stopwatch: Stopwatch!
+    var finishedView: QuizFinishedView!
     
     @IBOutlet weak var questionScrollView: UIScrollView!
     @IBOutlet weak var questionIndicatorStackView: UIStackView!
@@ -46,6 +47,10 @@ class StartedQuizViewController: UIViewController {
             questionView.questionAnsweredDelegate = self
             questionScrollView.addSubview(questionView)
         }
+        
+        let finishedOffset = quizScrollViewWidth * CGFloat(quiz.questions.count)
+        finishedView = QuizFinishedView(frame: CGRect(origin: CGPoint(x: finishedOffset, y: 0), size: questionScrollView.frame.size))
+        questionScrollView.addSubview(finishedView)
     }
     
     private func setupNavbar(){
@@ -110,7 +115,7 @@ class StartedQuizViewController: UIViewController {
     
     private func postResults() {
         let quizId = quiz.id
-        let numberOfCorrectAnswers = answers.filter{$0}.count
+        let numberOfCorrectAnswers = getNumOfCorrectAnswers()
         let quizTime = stopwatch.getTime()
         
         let quizService = QuizzesService()
@@ -140,6 +145,14 @@ class StartedQuizViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    private func getNumOfCorrectAnswers() -> Int {
+        return answers.filter{$0}.count
+    }
+    
+    private func callSetupFinishedView(){
+        finishedView.setup(numOfCorrect: getNumOfCorrectAnswers(), numOfQuestions: quiz.questions.count)
+        
+    }
 }
 
 extension StartedQuizViewController: QuestionAnsweredDelegate {
@@ -147,13 +160,18 @@ extension StartedQuizViewController: QuestionAnsweredDelegate {
         answeredQuestionLogic(isCorrect: isCorrect, questionNumber: answers.count)
         
         
-        let seconds = 0.4
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        let secondsBetweenQuestion = 0.4
+        DispatchQueue.main.asyncAfter(deadline: .now() + secondsBetweenQuestion) {
             self.autoScroll()
             
             if self.answers.count == self.quiz.questions.count {
                 self.stopwatch.stop()
-                self.postResults()
+                self.callSetupFinishedView()
+
+                let secondsForLastView = 2.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + secondsForLastView) {
+                    self.postResults()
+                }
             } else {
                 self.focusQuestionIndicator(questionNumber: self.answers.count)
                 self.refreshQuestionNumberLabel()

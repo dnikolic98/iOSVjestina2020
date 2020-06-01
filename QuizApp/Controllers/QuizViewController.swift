@@ -75,10 +75,12 @@ class QuizViewController: UIViewController {
         UIApplication.shared.keyWindow!.addSubview(leaderboardView)
         
         leaderboardView.leaderboardDelegate = self
+        leaderboardView.setupLeaderboard(quizId: quiz.id)
     }
     
     func showLeaderboard(){
         leaderboardView.animateInFromBottom()
+        leaderboardView.refresh()
 //        leaderboardView.isHidden = false
     }
     
