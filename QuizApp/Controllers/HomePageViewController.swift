@@ -144,6 +144,9 @@ class HomePageViewController: UIViewController {
     func showDetailScreen(question: Question) {
         questionView.loadData(question: question)
         blurView.isHidden = false
+        if questionView.isHidden{
+            questionView.animateScaleFromZero()
+        }
         questionView.isHidden = false
     }
     

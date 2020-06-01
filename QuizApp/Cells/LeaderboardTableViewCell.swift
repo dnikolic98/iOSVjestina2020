@@ -25,9 +25,8 @@ class LeaderboardTableViewCell: UITableViewCell {
     }
     
     func setup(leaderboardCellModel: LeaderboardCellModel) {
-        let points = Double(round(100*leaderboardCellModel.points)/100)
         self.positionLabel.text = "\(leaderboardCellModel.position)."
         self.playerLabel.text = leaderboardCellModel.username
-        self.pointsLabel.text = "\(points)"
+        self.pointsLabel.text = "\(round(leaderboardCellModel.points))"
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 public extension UIView{
     
@@ -33,5 +34,14 @@ public extension UIView{
             self.isHidden = true
             self.center.y -= self.bounds.height
         })
+    }
+    
+    func animateScaleFromZero(){
+        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseIn],
+                       animations: {
+                        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.layoutIfNeeded()
+        },  completion: nil)
     }
 }

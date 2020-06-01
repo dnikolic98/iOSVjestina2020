@@ -36,20 +36,21 @@ class StartedQuizViewController: UIViewController {
     }
     
     private func setupQuestionViews() {
+        let deviceWidth = UIScreen.main.bounds.size.width
         let quizScrollViewWidth = self.questionScrollView.frame.width
         
         quiz.questions.enumerated().forEach {
-            let offset = quizScrollViewWidth * CGFloat($0)
+            let offset = deviceWidth * CGFloat($0)
             let questionView = QuestionView(
                 frame: CGRect(origin: CGPoint(x: offset, y: 0),
-                              size: questionScrollView.frame.size))
+                              size: UIScreen.main.bounds.size))
             questionView.loadData(question: $1)
             questionView.questionAnsweredDelegate = self
             questionScrollView.addSubview(questionView)
         }
         
-        let finishedOffset = quizScrollViewWidth * CGFloat(quiz.questions.count)
-        finishedView = QuizFinishedView(frame: CGRect(origin: CGPoint(x: finishedOffset, y: 0), size: questionScrollView.frame.size))
+        let finishedOffset = deviceWidth * CGFloat(quiz.questions.count)
+        finishedView = QuizFinishedView(frame: CGRect(origin: CGPoint(x: finishedOffset, y: 0), size: UIScreen.main.bounds.size))
         questionScrollView.addSubview(finishedView)
     }
     
@@ -168,7 +169,7 @@ extension StartedQuizViewController: QuestionAnsweredDelegate {
                 self.stopwatch.stop()
                 self.callSetupFinishedView()
 
-                let secondsForLastView = 2.0
+                let secondsForLastView = 1.15
                 DispatchQueue.main.asyncAfter(deadline: .now() + secondsForLastView) {
                     self.postResults()
                 }
