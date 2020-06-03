@@ -9,9 +9,9 @@
 import UIKit
 
 class QuizFinishedView: UIView {
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

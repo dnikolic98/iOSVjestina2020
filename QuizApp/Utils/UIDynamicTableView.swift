@@ -13,7 +13,7 @@ class UIDynamicTableView: UITableView {
         self.layoutIfNeeded()
         return CGSize(width: UIView.noIntrinsicMetric, height: self.contentSize.height)
     }
-
+    
     override func reloadData() {
         super.reloadData()
         self.invalidateIntrinsicContentSize()

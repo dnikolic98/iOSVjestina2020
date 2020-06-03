@@ -9,10 +9,10 @@
 import UIKit
 
 class SettingsViewController: UIViewController{
-    @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet private weak var logoutButton: UIButton!
+    @IBOutlet private weak var usernameLabel: UILabel!
     
-    @IBAction func logoutPressed(_ sender: Any) {
+    @IBAction private func logoutPressed(_ sender: Any) {
         Authorization.logoutUser()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

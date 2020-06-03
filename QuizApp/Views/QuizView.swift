@@ -16,13 +16,13 @@ protocol QuizStartDelegate {
 class QuizView: UIView {
     var quizStartDelegate: QuizStartDelegate!
     
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var quizImageView: UIImageView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var quizImageView: UIImageView!
+    @IBOutlet private weak var startButton: UIButton!
     
-    @IBAction func startQuizPressed(_ sender: Any) {
+    @IBAction private func startQuizPressed(_ sender: Any) {
         quizStartDelegate.didStartQuiz()
     }
     
@@ -52,7 +52,7 @@ class QuizView: UIView {
     func setup(quiz: QuizCellModel){
         titleLabel.text = quiz.title
         descriptionLabel.text = quiz.description
-
+        
         if let url = quiz.imageUrl {
             self.quizImageView.layer.cornerRadius = 10
             self.quizImageView.kf.setImage(with: url)

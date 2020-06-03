@@ -22,7 +22,6 @@ struct LeaderboardCellModel {
 }
 
 class LeaderboardViewModel {
-    
     private var quizId: Int
     private var scores: [Score]?
     

@@ -9,11 +9,11 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-    var quiz: QuizCellModel!
-    var leaderboardView: LeaderboardView!
-
-    @IBOutlet weak var leaderboardButton: UIButton!
-    @IBOutlet weak var quizView: QuizView!
+    private var quiz: QuizCellModel!
+    private var leaderboardView: LeaderboardView!
+    
+    @IBOutlet private weak var leaderboardButton: UIButton!
+    @IBOutlet private weak var quizView: QuizView!
     
     @IBAction func leaderboardPressed(_ sender: Any) {
         showLeaderboard()
@@ -61,7 +61,7 @@ class QuizViewController: UIViewController {
         navigationController?.view.backgroundColor = UIColor.clear
     }
     
-    func setupLeaderboardView(){
+    private func setupLeaderboardView(){
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
         let frameSize: CGPoint = CGPoint(x: deviceWidth*0.5, y: deviceHeight*0.5)
@@ -71,22 +71,28 @@ class QuizViewController: UIViewController {
         leaderboardView.clipsToBounds = true
         leaderboardView.sizeToFit()
         leaderboardView.isHidden = true
-        leaderboardView.frame = UIApplication.shared.keyWindow!.frame
-        UIApplication.shared.keyWindow!.addSubview(leaderboardView)
+        
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        
+        leaderboardView.frame = keyWindow!.frame
+        keyWindow!.addSubview(leaderboardView)
         
         leaderboardView.leaderboardDelegate = self
         leaderboardView.setupLeaderboard(quizId: quiz.id)
     }
     
-    func showLeaderboard(){
+    private func showLeaderboard(){
         leaderboardView.animateInFromBottom()
         leaderboardView.refresh()
-//        leaderboardView.isHidden = false
     }
     
-    func hideLeaderboard(){
+    private func hideLeaderboard(){
         leaderboardView.animateOutToBottom()
-//        leaderboardView.isHidden = true
     }
 }
 

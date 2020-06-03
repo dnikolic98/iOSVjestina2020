@@ -31,7 +31,7 @@ struct QuizCellModel {
 }
 
 class QuizzesViewModel {
-    var quizzes: [Quiz]?
+    private var quizzes: [Quiz]?
     
     func fetchQuizzes(completion: @escaping (([Quiz]?) -> Void))  {
         QuizzesService().fetchQuizzes() { (quizzes) in

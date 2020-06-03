@@ -9,12 +9,12 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate{
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var showPassButton: UIButton!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var showPassButton: UIButton!
     
-    @IBAction func showPassword(_ sender: Any) {
+    @IBAction private func showPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         if passwordTextField.isSecureTextEntry {
             showPassButton.tintColor = Colors.white_60
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    @IBAction func loginTapped(_ sender: Any) {
+    @IBAction private func loginTapped(_ sender: Any) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         if email.count == 0 {
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         login(email: email, password: password)
     }
     
-    func login(email: String, password: String) {
+    private func login(email: String, password: String) {
         
         let loginService = LoginService()
         loginService.login(username: email, password: password) { (authToken) in
@@ -72,13 +72,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func setupLoginButton(){
+    private func setupLoginButton(){
         loginButton.setTitleColor(Colors.darkPurple, for: .normal)
         loginButton.backgroundColor = Colors.white
         loginButton.layer.cornerRadius = 23
     }
     
-    func setupTextField(textField: UITextField){
+    private func setupTextField(textField: UITextField){
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 23
         
@@ -113,11 +113,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height / 10
@@ -125,7 +125,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }

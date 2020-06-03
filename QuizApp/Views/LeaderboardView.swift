@@ -13,19 +13,19 @@ protocol LeaderboardDelegate {
 }
 
 class LeaderboardView: UIView {
-    let cellReuseIdentifier = "cellReuseIdentifier"
+    private let cellReuseIdentifier = "cellReuseIdentifier"
     
-    var viewModel: LeaderboardViewModel!
+    private var viewModel: LeaderboardViewModel!
     var leaderboardDelegate: LeaderboardDelegate!
-    var quizId: Int!
-    var refreshControl: UIRefreshControl!
+    private var quizId: Int!
+    private var refreshControl: UIRefreshControl!
     
     
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var leaderboardTableView: UITableView!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var leaderboardTableView: UITableView!
     
     
-    @IBAction func CloseLeaderboardAction(_ sender: Any) {
+    @IBAction private func CloseLeaderboardAction(_ sender: Any) {
         leaderboardDelegate.didCloseLeaderboard()
     }
     
@@ -55,7 +55,7 @@ class LeaderboardView: UIView {
         setupTableView()
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         leaderboardTableView.delegate = self
         leaderboardTableView.dataSource = self
         
@@ -95,17 +95,6 @@ extension LeaderboardView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        let verticalPadding: CGFloat = 10
-    //        let horizontalPadding: CGFloat = 20
-    //
-    //        let maskLayer = CALayer()
-    //        maskLayer.cornerRadius = 10
-    //        maskLayer.backgroundColor = UIColor.black.cgColor
-    //        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: horizontalPadding/2, dy: verticalPadding/2)
-    //        cell.layer.mask = maskLayer
-    //    }
 }
 
 extension LeaderboardView: UITableViewDataSource {

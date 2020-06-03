@@ -10,21 +10,21 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-    let cellReuseIdentifier = "cellReuseIdentifier"
+    private let cellReuseIdentifier = "cellReuseIdentifier"
     
-    var viewModel: QuizzesViewModel!
-    var refreshControl: UIRefreshControl!
-    var blurView: UIView!
-    var questionView: QuestionView!
+    private var viewModel: QuizzesViewModel!
+    private var refreshControl: UIRefreshControl!
+    private var blurView: UIView!
+    private var questionView: QuestionView!
     
-    @IBOutlet weak var getQuizButton: UIButton!
-    @IBOutlet weak var xCircle: UIImageView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var erorInfoLabel: UILabel!
-    @IBOutlet weak var funFactDetails: UILabel!
-    @IBOutlet weak var funFact: UILabel!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var getQuizButton: UIButton!
+    @IBOutlet private weak var xCircle: UIImageView!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var erorInfoLabel: UILabel!
+    @IBOutlet private weak var funFactDetails: UILabel!
+    @IBOutlet private weak var funFact: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     @IBAction func getQuizButtonTapped(_ sender: Any) {
         bindViewModel()
@@ -57,13 +57,13 @@ class HomePageViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func setupGetQuizButton(){
+    private func setupGetQuizButton(){
         getQuizButton.setTitleColor(Colors.darkPurple, for: .normal)
         getQuizButton.backgroundColor = Colors.white
         getQuizButton.layer.cornerRadius = 23
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -78,7 +78,7 @@ class HomePageViewController: UIViewController {
         tableViewHeightConstraint.constant = CGFloat(0)
     }
     
-    func setupBlurView(){
+    private func setupBlurView(){
         let blurEffect = UIBlurEffect(style: .extraLight)
         blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = view.frame
@@ -86,7 +86,7 @@ class HomePageViewController: UIViewController {
         view.addSubview(blurView)
     }
     
-    func setupQuestionView(){
+    private func setupQuestionView(){
         let deviceWidth = UIScreen.main.bounds.size.width
         let deviceHeight = UIScreen.main.bounds.size.height
         let frameSize: CGPoint = CGPoint(x: deviceWidth*0.5, y: deviceHeight*0.5)
@@ -102,7 +102,7 @@ class HomePageViewController: UIViewController {
         view.addSubview(questionView)
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel.fetchQuizzes() { (quizzes) in
             if quizzes != nil{
                 self.refresh()
@@ -123,7 +123,7 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    @objc func refresh() {
+    @objc private func refresh() {
         DispatchQueue.main.async {
             self.refreshTableViewHeight()
             self.tableView.reloadData()
@@ -131,7 +131,7 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    func refreshTableViewHeight(){
+    private func refreshTableViewHeight(){
         let rowHeight = 170
         let sectionHeight = 50
         
@@ -141,7 +141,7 @@ class HomePageViewController: UIViewController {
         tableViewHeightConstraint.constant = CGFloat(rows * rowHeight + sections * sectionHeight)
     }
     
-    func showDetailScreen(question: Question) {
+    private func showDetailScreen(question: Question) {
         questionView.loadData(question: question)
         blurView.isHidden = false
         if questionView.isHidden{
@@ -150,13 +150,13 @@ class HomePageViewController: UIViewController {
         questionView.isHidden = false
     }
     
-    func hideDetailScreen() {
+    private func hideDetailScreen() {
         questionView.isHidden = true
         blurView.isHidden = true
         questionView.resetButtons()
     }
     
-    func showFunFact(word: String){
+    private func showFunFact(word: String){
         if let fact = viewModel.getFunFact(forWord: word){
             self.funFactDetails.text = fact
             self.funFactDetails.isHidden = false
@@ -164,19 +164,19 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    func hideFunFact() {
+    private func hideFunFact() {
         self.funFactDetails.isHidden = true
         self.funFact.isHidden = true
     }
     
     
-    func showErrorMessage(){
+    private func showErrorMessage(){
         self.xCircle.isHidden = false
         self.errorLabel.isHidden = false
         self.erorInfoLabel.isHidden = false
     }
     
-    func hideErrorMessage(){
+    private func hideErrorMessage(){
         self.xCircle.isHidden = true
         self.errorLabel.isHidden = true
         self.erorInfoLabel.isHidden = true

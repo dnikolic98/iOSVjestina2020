@@ -73,6 +73,7 @@ public extension UIView {
                                               attribute: NSLayoutConstraint.Attribute.trailing,
                                               multiplier: 1, constant: 0))
     }
+    
     func addLeftBorder(_ color: UIColor, width: CGFloat) {
         let border = UIView()
         border.backgroundColor = color
@@ -104,6 +105,7 @@ public extension UIView {
                                               attribute: NSLayoutConstraint.Attribute.top,
                                               multiplier: 1, constant: 0))
     }
+    
     func addRightBorder(_ color: UIColor, width: CGFloat) {
         let border = UIView()
         border.backgroundColor = color

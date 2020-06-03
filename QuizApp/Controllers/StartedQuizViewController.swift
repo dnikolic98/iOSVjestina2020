@@ -9,15 +9,15 @@
 import UIKit
 
 class StartedQuizViewController: UIViewController {
-    var quiz: QuizCellModel!
-    var answers = [Bool]()
-    var questionIndicatorViews = [UIView]()
-    var stopwatch: Stopwatch!
-    var finishedView: QuizFinishedView!
+    private var quiz: QuizCellModel!
+    private var answers = [Bool]()
+    private var questionIndicatorViews = [UIView]()
+    private var stopwatch: Stopwatch!
+    private var finishedView: QuizFinishedView!
     
-    @IBOutlet weak var questionScrollView: UIScrollView!
-    @IBOutlet weak var questionIndicatorStackView: UIStackView!
-    @IBOutlet weak var questionNumberLabel: UILabel!
+    @IBOutlet private weak var questionScrollView: UIScrollView!
+    @IBOutlet private weak var questionIndicatorStackView: UIStackView!
+    @IBOutlet private weak var questionNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,6 @@ class StartedQuizViewController: UIViewController {
     
     private func setupQuestionViews() {
         let deviceWidth = UIScreen.main.bounds.size.width
-        let quizScrollViewWidth = self.questionScrollView.frame.width
         
         quiz.questions.enumerated().forEach {
             let offset = deviceWidth * CGFloat($0)
@@ -168,7 +167,7 @@ extension StartedQuizViewController: QuestionAnsweredDelegate {
             if self.answers.count == self.quiz.questions.count {
                 self.stopwatch.stop()
                 self.callSetupFinishedView()
-
+                
                 let secondsForLastView = 1.15
                 DispatchQueue.main.asyncAfter(deadline: .now() + secondsForLastView) {
                     self.postResults()

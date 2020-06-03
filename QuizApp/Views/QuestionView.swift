@@ -16,11 +16,11 @@ class QuestionView: UIView {
     private var question: Question?
     var questionAnsweredDelegate: QuestionAnsweredDelegate!
     
-    @IBOutlet var view: UIView!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet var answerButtons:[UIButton]!
+    @IBOutlet private var view: UIView!
+    @IBOutlet private weak var questionLabel: UILabel!
+    @IBOutlet private var answerButtons:[UIButton]!
     
-    @IBAction func answerPressed(_ sender: Any) {
+    @IBAction private func answerPressed(_ sender: Any) {
         if let pressedButton = sender as? UIButton, let question = self.question {
             var isCorrect: Bool
             let correctAnswer = question.answers[question.correctAnswer]
@@ -33,7 +33,7 @@ class QuestionView: UIView {
                 incorrectAnswerAction(pressedButton: pressedButton, correctButton: correctButton)
                 isCorrect = false
             }
-
+            
             deactivateButtons()
             questionAnsweredDelegate.didAnswerQuestion(isCorrect: isCorrect)
         }
