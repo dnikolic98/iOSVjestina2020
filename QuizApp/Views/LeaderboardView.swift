@@ -20,10 +20,8 @@ class LeaderboardView: UIView {
     private var quizId: Int!
     private var refreshControl: UIRefreshControl!
     
-    
     @IBOutlet private var view: UIView!
     @IBOutlet private weak var leaderboardTableView: UITableView!
-    
     
     @IBAction private func CloseLeaderboardAction(_ sender: Any) {
         leaderboardDelegate.didCloseLeaderboard()

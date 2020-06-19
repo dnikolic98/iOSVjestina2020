@@ -9,10 +9,15 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate{
+    private let animationDelay = 0.15
+    private let animationDuration = 0.5
+    
+    @IBOutlet private weak var appLabel: UILabel!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var showPassButton: UIButton!
+    @IBOutlet private weak var passwrodVerticalConstraint: NSLayoutConstraint!
     
     @IBAction private func showPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
@@ -51,8 +56,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 }
                 Authorization.loginUser(authToken: authToken)
                 
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.switchToHomePage()
+                self.animateOutAndSwitch()
             }
         }
     }
@@ -70,6 +74,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        appLabel.animateScaleToSize(scaleFrom: 0.0, scaleTo: 1.0, duration: animationDuration)
+        emailTextField.animateInFromLeft(duration: animationDuration, delay: 0.0)
+        emailTextField.animateInFromLeft(duration: animationDuration, delay: animationDelay)
+        passwordTextField.animateInFromLeft(duration: animationDuration, delay: animationDelay*2)
+        loginButton.animateInFromLeft(duration: animationDuration, delay: animationDelay*3)
+    }
+    
+    private func animateOutAndSwitch(){
+        view.removeConstraint(passwrodVerticalConstraint)
+        
+        appLabel.animateOutToTop(duration: animationDuration, delay: 0.0)
+        emailTextField.animateOutToTop(duration: animationDuration, delay: animationDelay)
+        passwordTextField.animateOutToTop(duration: animationDuration, delay: animationDelay*2)
+        showPassButton.animateOutToTop(duration: animationDuration, delay: animationDelay*2)
+        loginButton.animateOutToTop(duration: animationDuration, delay: animationDelay*3)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay*3 + animationDuration) {
+            self.switchToHomePage()
+        }
+    }
+    
+    private func switchToHomePage(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchToHomePage()
     }
     
     private func setupLoginButton(){

@@ -15,13 +15,14 @@ class TabBarViewController: UITabBarController {
         let navigationViewController = UINavigationController(rootViewController: homePageViewController)
         navigationViewController.tabBarItem = UITabBarItem(title: "Quiz", image: #imageLiteral(resourceName: "QuizHome"), tag: 0)
         
-        let searchViewController = SearchViewController()
-        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "Search"), tag: 0)
+        let searchViewController = SearchViewController(viewModel: QuizzesViewModel())
+        let searchNavigationViewController = UINavigationController(rootViewController: searchViewController)
+        searchNavigationViewController.tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "Search"), tag: 0)
         
         let settingsViewController = SettingsViewController()
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "Settings"), tag: 0)
         
-        self.viewControllers = [navigationViewController,searchViewController,settingsViewController]
+        self.viewControllers = [navigationViewController,searchNavigationViewController,settingsViewController]
         
         tabBar.tintColor = Colors.darkPurple
         tabBar.backgroundColor = Colors.white

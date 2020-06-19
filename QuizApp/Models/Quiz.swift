@@ -9,7 +9,7 @@
 import Foundation
 
 class Quiz{
-    
+
     let id: Int
     let title: String
     let description: String
@@ -17,10 +17,10 @@ class Quiz{
     let level: Int
     let imageUrl: String
     let questions: [Question]
-    
+
     init?(json: Any) {
         if let jsonDict = json as? [String: Any],
-            
+
             let id = jsonDict["id"] as? Int,
             let title = jsonDict["title"] as? String,
             let description = jsonDict["description"] as? String,
@@ -28,8 +28,7 @@ class Quiz{
             let level = jsonDict["level"] as? Int,
             let imageUrl = jsonDict["image"] as? String,
             let questionsJson = jsonDict["questions"] as? [Any]{
-            
-            
+
             self.id = id
             self.title = title
             self.description = description

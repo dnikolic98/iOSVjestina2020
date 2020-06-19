@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="coreAnswers" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="coreCorrectAnswer" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coreId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coreQuestion" attributeType="String"/>
+    </entity>
+    <entity name="Quiz" representedClassName="Quiz" syncable="YES">
+        <attribute name="coreCategory" attributeType="String"/>
+        <attribute name="coreDescription" optional="YES" attributeType="String"/>
+        <attribute name="coreId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coreImageUrl" attributeType="String"/>
+        <attribute name="coreLevel" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coreTitle" attributeType="String"/>
+        <relationship name="coreQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question"/>
+    </entity>
+    <elements>
+        <element name="Question" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="Quiz" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
+</model>

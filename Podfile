@@ -6,4 +6,5 @@ target 'QuizApp' do
   # your other pod
   # ...
   pod 'Kingfisher', '~> 5.0'
+  pod 'ReachabilitySwift'
 end

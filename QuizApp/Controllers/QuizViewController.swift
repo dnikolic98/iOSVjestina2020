@@ -79,8 +79,11 @@ class QuizViewController: UIViewController {
             .first?.windows
             .filter({$0.isKeyWindow}).first
         
+        // probati preko presenta
         leaderboardView.frame = keyWindow!.frame
         keyWindow!.addSubview(leaderboardView)
+        
+//        self.tabBarController?.present(leaderboardView, animated: true, completion: nil)
         
         leaderboardView.leaderboardDelegate = self
         leaderboardView.setupLeaderboard(quizId: quiz.id)

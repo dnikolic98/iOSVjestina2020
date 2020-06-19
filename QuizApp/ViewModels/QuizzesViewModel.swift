@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import CoreData
+import Reachability
 
 struct QuizCellModel {
     
@@ -43,6 +44,19 @@ class QuizzesViewModel {
             }
         }
     }
+    
+    func fetchAndFilter(filter: String, completion: @escaping (([Quiz]?) -> Void)){
+        QuizzesService().fetchQuizzes() { (quizzes) in
+            if let quizzes = quizzes{
+                let filtered = quizzes.filter{$0.title.lowercased().contains(filter.lowercased())}
+                self.quizzes = filtered
+                completion(filtered)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     
     func quiz(indexPath: IndexPath) -> QuizCellModel? {
         let category = Category.allCases[indexPath.section]

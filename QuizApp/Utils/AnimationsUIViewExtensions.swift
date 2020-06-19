@@ -36,12 +36,38 @@ public extension UIView{
         })
     }
     
-    func animateScaleFromZero(){
-        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseIn],
+    func animateScaleToSize(scaleFrom: CGFloat, scaleTo: CGFloat, duration: TimeInterval){
+        self.isHidden = true
+        self.transform = CGAffineTransform(scaleX: scaleFrom, y: scaleFrom)
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseIn],
                        animations: {
-                        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.transform = CGAffineTransform(scaleX: scaleTo, y: scaleTo)
+                        self.isHidden = false
                         self.layoutIfNeeded()
         },  completion: nil)
+    }
+    
+    func animateInFromLeft(duration: TimeInterval, delay: TimeInterval){
+        self.isHidden = true
+        let oldCenterX = self.center.x
+        self.center.x -= 2 * oldCenterX
+        UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseIn],
+                       animations: {
+                        self.center.x += 2 * oldCenterX
+                        self.isHidden = false
+                        self.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func animateOutToTop(duration: TimeInterval, delay: TimeInterval){
+        let oldCenterY = self.center.y
+        UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseIn],
+                       animations: {
+                        self.center.y -= 2 * oldCenterY
+                        self.layoutIfNeeded()
+        }, completion: {(_ completed: Bool) -> Void in
+            self.isHidden = true
+            self.center.y += 2 * oldCenterY
+        })
     }
 }

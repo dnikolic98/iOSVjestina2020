@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,9 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="QuizApp" customModuleProvider="target">
             <connections>
+                <outlet property="appLabel" destination="mwG-Om-jVV" id="6Nu-A8-7C6"/>
                 <outlet property="emailTextField" destination="1Z1-ba-nwA" id="BW7-aL-FI7"/>
                 <outlet property="loginButton" destination="MlM-hx-oXl" id="Bov-OT-jM7"/>
                 <outlet property="passwordTextField" destination="MZB-A6-X1p" id="88F-Uf-kIT"/>
+                <outlet property="passwrodVerticalConstraint" destination="yox-Pj-BM2" id="MPK-I3-20E"/>
                 <outlet property="showPassButton" destination="dBk-ye-Gcp" id="Tfd-fD-Oub"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wu9-SQ-qfv"/>
             </connections>
@@ -78,9 +80,7 @@
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
                 <constraint firstItem="MlM-hx-oXl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="JYA-ip-Mwx"/>
-                <constraint firstItem="MZB-A6-X1p" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TnM-5p-fQl"/>
                 <constraint firstItem="dBk-ye-Gcp" firstAttribute="top" secondItem="1Z1-ba-nwA" secondAttribute="bottom" constant="25" id="XJG-jz-Iit"/>
-                <constraint firstItem="MlM-hx-oXl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XyW-O7-aIh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MlM-hx-oXl" secondAttribute="trailing" constant="32" id="ZPj-Rp-uYx"/>
                 <constraint firstItem="MZB-A6-X1p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="bv2-IV-gLv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Z1-ba-nwA" secondAttribute="trailing" constant="32" id="gpb-Vl-Ob5"/>
@@ -89,7 +89,6 @@
                 <constraint firstItem="MlM-hx-oXl" firstAttribute="top" secondItem="MZB-A6-X1p" secondAttribute="bottom" constant="13" id="otf-Gu-6iK"/>
                 <constraint firstItem="mwG-Om-jVV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="pGP-z4-C5y"/>
                 <constraint firstItem="mwG-Om-jVV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qhy-qR-0b9"/>
-                <constraint firstItem="1Z1-ba-nwA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="w7X-IY-bD2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dBk-ye-Gcp" secondAttribute="trailing" constant="52" id="xJL-5y-5pQ"/>
                 <constraint firstItem="MZB-A6-X1p" firstAttribute="top" secondItem="1Z1-ba-nwA" secondAttribute="bottom" constant="13" id="xtE-FR-ecw"/>
                 <constraint firstItem="MZB-A6-X1p" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yox-Pj-BM2"/>

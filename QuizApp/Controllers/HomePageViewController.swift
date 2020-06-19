@@ -145,7 +145,7 @@ class HomePageViewController: UIViewController {
         questionView.loadData(question: question)
         blurView.isHidden = false
         if questionView.isHidden{
-            questionView.animateScaleFromZero()
+            questionView.animateScaleToSize(scaleFrom: 0.5, scaleTo: 1.0, duration: 0.15)
         }
         questionView.isHidden = false
     }
